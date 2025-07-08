@@ -1,0 +1,33 @@
+@using BlazorBootstrap
+@namespace Components
+
+<EditForm Model="routeInfo">
+    <TextInputBase BindValue = "routeInfo.From" Label="From" Placeholder="Enter Starting Location" IconName="IconName.GeoAlt" />
+    <TextInputBase BindValue = "routeInfo.To" Label="To" Placeholder="Enter Destination Location" IconName="IconName.GeoAlt" />
+
+    <div class="mb-3 mt-3">
+        <label for="departure-time" class="form-label">Departure Time</label>
+        <div class="mb-3">
+            <TimeInput TValue="TimeOnly?" @bind-Value="routeInfo.DepartureTime" />
+        </div>
+    </div>
+    
+    <button class="btn btn-primary" type="submit">Search</button>
+</EditForm>
+
+@code 
+{
+    private RouteInfo routeInfo = new RouteInfo();
+
+    public class RouteInfo
+    {
+        public string From { get; set; }
+        public string To { get; set; }
+        public TimeOnly? DepartureTime { get; set; }
+
+        public RouteInfo()
+        {
+            DepartureTime = new TimeOnly(12, 00); // Default time
+        }
+    }
+}

@@ -1,0 +1,97 @@
+@page "/transit"
+@using Components;
+@using BlazorBootstrap;
+
+<Offcanvas @ref="offcanvas" title="Routes" UseStaticBackdrop="true" Size="OffcanvasSize.Large" class = "rounded-2" Placement="Placement.Start" ShowBackdrop="true" OnHide="OnHideOffcanvasClick"> 
+    <BodyTemplate>
+        @if(!showDetails)
+        {
+            <Card class="mb-3 mt-3">
+                <CardBody>
+                    <BusRouteForm />
+                </CardBody>
+            </Card>
+            @for (int i = 0; i < 5; i++)
+            {
+                <div class="col-12 mb-3">
+                    <Card>
+                        <CardBody>
+                            <span><b>12:@(i * 5) - 16:@(i * 5)</b></span>
+                            <br />
+                            <Button Color="ButtonColor.Primary" @onclick="ShowDetails">details</Button>
+                        </CardBody>
+                    </Card>
+                </div>
+            }
+        }
+        else
+        {
+            <Button @onclick="GoBack"><Icon Name="IconName.ArrowLeft" Size="IconSize.x1"/></Button>
+            <RoutesDetails />
+        }
+    </BodyTemplate>
+</Offcanvas>
+<div class="col-12 vh-100 position-fixed top-0 start-0 end-0">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0867334424076!2d-122.41941568468262!3d37.77492927975968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c2fdd83db%3A0x1a258ddff67a6609!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1613946689571!5m2!1sen!2sus"
+      style="border:0; width:100%; height:100%;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+<div class="d-none d-md-flex position-fixed start-0 top-0 bg-secondary rounded-2 vh-100 align-items-center mx-1" @onclick="OnShowOffcanvasClick" style = "width : 3rem; margin-top: 4rem; margin-left: 4rem">
+    <Icon Name="IconName.ArrowBarRight" Size="IconSize.x1" style="margin-top: 50%"/>
+</div>
+<div class="d-flex d-md-none position-fixed end-0 bottom-0 start-0 bg-secondary rounded-2 vw-100 align-items-center mx-1 my-1" @onclick="OnShowOffcanvasClick" style = "height : 3rem;">
+    <Icon Name="IconName.ArrowBarUp" Size="IconSize.x1" class="mx-auto"/>
+</div>
+
+@code 
+{
+    private Offcanvas offcanvas = default!;
+    private bool showDetails = false;
+    
+    bool _isOffcanvasShown = false;
+
+    private async Task OnShowOffcanvasClick()
+    {
+        offcanvas.Placement = Placement.Start;
+        await offcanvas.ShowAsync();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if(firstRender)
+        {
+            await ShowOffcanvasAsync();
+        }
+    }
+    private async Task ShowOffcanvasAsync()
+    {
+        await offcanvas.ShowAsync();
+        _isOffcanvasShown = true;
+    }
+    private void ShowDetails()
+    {
+        showDetails = true;
+    }
+
+    private void GoBack()
+    {
+        
+        if(showDetails == true) 
+        {
+            showDetails = false;
+        }
+        else
+        {
+            offcanvas.HideAsync();
+        }
+    }
+
+    private async Task OnHideOffcanvasClick()
+    {
+        await offcanvas.HideAsync();
+    }
+}

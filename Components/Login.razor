@@ -1,0 +1,50 @@
+@namespace Tujyane.Components
+<Modal @ref="modal" Title="Login">
+    <BodyTemplate>
+        <EditForm Model="loginInfo">
+            <TextInputBase BindValue = "loginInfo.Username" Label="Username" Placeholder="Enter Username" IconName="IconName.Person" />
+            <TextInputBase Type="password" BindValue = "loginInfo.Password" Label="Password" Placeholder="Enter Password" IconName="IconName.Lock" />
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="rememberMe" />
+                <label class="form-check-label" for="rememberMe">Remember me</label>
+            </div>
+            <ValidationSummary />
+            <ValidationMessage For="@(() => loginInfo.Username)" />
+            <ValidationMessage For="@(() => loginInfo.Password)" />
+        </EditForm>
+    </BodyTemplate>
+    <FooterTemplate>
+        <span class="text-muted dark float-start">Don't have an account? <a href="#">Sign up</a></span>
+        <span class="text-muted float-end dark">Forgot password? <a href="#">Reset</a></span>
+        <br />
+        <Button Color="ButtonColor.Secondary" @onclick="HandleCancel">Cancel</Button>
+        <Button Color="ButtonColor.Primary" @onclick="HandleLogin">Login</Button>
+    </FooterTemplate>
+</Modal>
+
+@code {
+    private Modal modal = default!;
+
+    public async Task ShowAsync() => await modal.ShowAsync();
+    public async Task HideAsync() => await modal.HideAsync();
+
+    public class LoginInfo
+    {
+        public string Username { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
+
+        public LoginInfo() { }
+    }
+    private LoginInfo loginInfo = new LoginInfo();
+    private void HandleLogin()
+    {
+        // Handle login logic here
+        Console.WriteLine($"Username: {loginInfo.Username}, Password: {loginInfo.Password}");
+        HideAsync();
+    }
+    private void HandleCancel()
+    {
+        // Handle cancel logic here
+        HideAsync();
+    }
+}

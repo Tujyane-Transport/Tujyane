@@ -1,0 +1,61 @@
+{
+  "Files": [
+    {
+      "Id": "/home/rwema/Documents/GitHub/Projects/Tujyane/bin/Debug/net8.0/wwwroot/_framework/blazor.webassembly.js",
+      "PackagePath": "staticwebassets/_framework/blazor.webassembly.js"
+    },
+    {
+      "Id": "/home/rwema/Documents/GitHub/Projects/Tujyane/obj/Debug/net8.0/compressed/su3q5o2tqe.gz",
+      "PackagePath": "staticwebassets/_framework/blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "/home/rwema/Documents/GitHub/Projects/Tujyane/obj/Debug/net8.0/scopedcss/bundle/Tujyane.styles.css",
+      "PackagePath": "staticwebassets/Tujyane.styles.css"
+    },
+    {
+      "Id": "/home/rwema/Documents/GitHub/Projects/Tujyane/wwwroot/css/app.css",
+      "PackagePath": "staticwebassets/css/app.css"
+    },
+    {
+      "Id": "/home/rwema/Documents/GitHub/Projects/Tujyane/wwwroot/css/bootstrap/bootstrap.min.css",
+      "PackagePath": "staticwebassets/css/bootstrap/bootstrap.min.css"
+    },
+    {
+      "Id": "/home/rwema/Documents/GitHub/Projects/Tujyane/wwwroot/css/bootstrap/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/css/bootstrap/bootstrap.min.css.map"
+    },
+    {
+      "Id": "/home/rwema/Documents/GitHub/Projects/Tujyane/wwwroot/favicon.png",
+      "PackagePath": "staticwebassets/favicon.png"
+    },
+    {
+      "Id": "/home/rwema/Documents/GitHub/Projects/Tujyane/wwwroot/icon-192.png",
+      "PackagePath": "staticwebassets/icon-192.png"
+    },
+    {
+      "Id": "/home/rwema/Documents/GitHub/Projects/Tujyane/wwwroot/index.html",
+      "PackagePath": "staticwebassets/index.html"
+    },
+    {
+      "Id": "/home/rwema/Documents/GitHub/Projects/Tujyane/wwwroot/sample-data/weather.json",
+      "PackagePath": "staticwebassets/sample-data/weather.json"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.Tujyane.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.Tujyane.props",
+      "PackagePath": "build\\Tujyane.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.Tujyane.props",
+      "PackagePath": "buildMultiTargeting\\Tujyane.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.Tujyane.props",
+      "PackagePath": "buildTransitive\\Tujyane.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

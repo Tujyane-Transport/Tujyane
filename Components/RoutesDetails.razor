@@ -1,0 +1,13 @@
+<div class="mt-2">
+    <div>
+        <Icon Name="IconName.PersonWalking" /> 12:45 - 13:00
+    </div>
+    <hr />
+    @for (int j = 1; j <= 15; j++)
+    {
+        <div>
+            <Icon Name="IconName.BusFront" /> @(j + 12):00 - @(j + 12):@(j * 5)
+        </div>
+        <hr />
+    }
+</div>

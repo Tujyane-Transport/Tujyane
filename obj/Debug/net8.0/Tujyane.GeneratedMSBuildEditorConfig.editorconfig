@@ -26,16 +26,32 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/rwema/Documents/GitHub/Projects/Tujyane/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ291bnRlci5yYXpvcg==
+[/home/rwema/Documents/GitHub/Projects/Tujyane/Components/BusRouteForm.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9CdXNSb3V0ZUZvcm0ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rwema/Documents/GitHub/Projects/Tujyane/Components/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9Mb2dpbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rwema/Documents/GitHub/Projects/Tujyane/Components/RoutesDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9Sb3V0ZXNEZXRhaWxzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rwema/Documents/GitHub/Projects/Tujyane/Components/TextInputBase.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9UZXh0SW5wdXRCYXNlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rwema/Documents/GitHub/Projects/Tujyane/Layout/NavBar.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0L05hdkJhci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/rwema/Documents/GitHub/Projects/Tujyane/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSG9tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/rwema/Documents/GitHub/Projects/Tujyane/Pages/Weather.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvV2VhdGhlci5yYXpvcg==
+[/home/rwema/Documents/GitHub/Projects/Tujyane/Pages/Routes.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUm91dGVzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/rwema/Documents/GitHub/Projects/Tujyane/_Imports.razor]
@@ -45,7 +61,3 @@ build_metadata.AdditionalFiles.CssScope =
 [/home/rwema/Documents/GitHub/Projects/Tujyane/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0L01haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-gqt6kkscc1
-
-[/home/rwema/Documents/GitHub/Projects/Tujyane/Layout/NavMenu.razor]
-build_metadata.AdditionalFiles.TargetPath = TGF5b3V0L05hdk1lbnUucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = b-435deekyjo
