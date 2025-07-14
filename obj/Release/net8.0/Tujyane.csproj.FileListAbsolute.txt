@@ -1034,3 +1034,6 @@
 /home/rwema/Documents/GitHub/Projects/Tujyane/obj/Release/net8.0/refint/Tujyane.dll
 /home/rwema/Documents/GitHub/Projects/Tujyane/obj/Release/net8.0/Tujyane.pdb
 /home/rwema/Documents/GitHub/Projects/Tujyane/obj/Release/net8.0/ref/Tujyane.dll
+/home/rwema/Documents/GitHub/Projects/Tujyane/bin/Release/net8.0/build/web.config
+/home/rwema/Documents/GitHub/Projects/Tujyane/bin/Release/net8.0/build/wwwroot/sample-data/weather.json
+/home/rwema/Documents/GitHub/Projects/Tujyane/bin/Release/net8.0/build/wwwroot/_framework/blazor.boot.json

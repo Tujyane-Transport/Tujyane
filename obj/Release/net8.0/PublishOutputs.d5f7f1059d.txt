@@ -1,0 +1,4 @@
+/home/rwema/Documents/GitHub/Projects/Tujyane/docs/build/web.config
+/home/rwema/Documents/GitHub/Projects/Tujyane/docs/build/wwwroot/sample-data/weather.json
+/home/rwema/Documents/GitHub/Projects/Tujyane/docs/build/wwwroot/_framework/blazor.boot.json
+/home/rwema/Documents/GitHub/Projects/Tujyane/docs/web.config
