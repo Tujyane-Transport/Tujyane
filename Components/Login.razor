@@ -1,50 +1,66 @@
 @namespace Tujyane.Components
+@using System.ComponentModel.DataAnnotations;
+
 <Modal @ref="modal" Title="Login">
     <BodyTemplate>
-        <EditForm Model="loginInfo">
-            <TextInputBase BindValue = "loginInfo.Username" Label="Username" Placeholder="Enter Username" IconName="IconName.Person" />
-            <TextInputBase Type="password" BindValue = "loginInfo.Password" Label="Password" Placeholder="Enter Password" IconName="IconName.Lock" />
+        <EditForm Model="loginInfo" OnValidSubmit="HandleLogin">
+            <DataAnnotationsValidator />
+            <h5 class="text-center mb-3">Welcome Back!</h5>
+
+            <TextInputBase BindValue="loginInfo.Username" Label="Username" Placeholder="Enter Username" IconName="IconName.Person" />
+            <ValidationMessage For="@(() => loginInfo.Username)" />
+
+            <TextInputBase Type="password" BindValue="loginInfo.Password" Label="Password" Placeholder="Enter Password" IconName="IconName.Lock" />
+            <ValidationMessage For="@(() => loginInfo.Password)" />
+
             <div class="form-check mb-3">
                 <input class="form-check-input" type="checkbox" id="rememberMe" />
                 <label class="form-check-label" for="rememberMe">Remember me</label>
             </div>
+
             <ValidationSummary />
-            <ValidationMessage For="@(() => loginInfo.Username)" />
-            <ValidationMessage For="@(() => loginInfo.Password)" />
         </EditForm>
     </BodyTemplate>
+
     <FooterTemplate>
-        <span class="text-muted dark float-start">Don't have an account? <a href="#">Sign up</a></span>
+        <span class="text-muted dark float-start">
+            Don't have an account?
+            <Button Class="ButtonColor.Primary" @onclick="() => OnSignUpClicked.InvokeAsync()">Sign up</Button>
+        </span>
         <span class="text-muted float-end dark">Forgot password? <a href="#">Reset</a></span>
         <br />
         <Button Color="ButtonColor.Secondary" @onclick="HandleCancel">Cancel</Button>
-        <Button Color="ButtonColor.Primary" @onclick="HandleLogin">Login</Button>
+        <Button Color="ButtonColor.Primary" ButtonType="ButtonType.Submit">Login</Button>
     </FooterTemplate>
 </Modal>
 
 @code {
     private Modal modal = default!;
 
+    [Parameter] public EventCallback OnSignUpClicked { get; set; }
+
     public async Task ShowAsync() => await modal.ShowAsync();
     public async Task HideAsync() => await modal.HideAsync();
 
+    private LoginInfo loginInfo = new();
+
     public class LoginInfo
     {
+        [Required(ErrorMessage = "Username is required")]
         public string Username { get; set; } = string.Empty;
-        public string Password { get; set; } = string.Empty;
 
-        public LoginInfo() { }
+        [Required(ErrorMessage = "Password is required")]
+        public string Password { get; set; } = string.Empty;
     }
-    private LoginInfo loginInfo = new LoginInfo();
+
     private void HandleLogin()
     {
-        // Handle login logic here
-        Console.WriteLine($"Username: {loginInfo.Username}, Password: {loginInfo.Password}");
+        Console.WriteLine($"Logging in: {loginInfo.Username}");
         HideAsync();
     }
+
     private void HandleCancel()
     {
-        // Handle cancel logic here
         HideAsync();
     }
 }

@@ -1,0 +1,86 @@
+@namespace Tujyane.Components
+@using System.ComponentModel.DataAnnotations;
+
+<Modal @ref="modal" Title="Sign Up">
+    <BodyTemplate>
+        <EditForm Model="signUpInfo" OnValidSubmit="HandleSignUp">
+            <DataAnnotationsValidator />
+
+            <TextInputBase BindValue="signUpInfo.Fullname" Label="Fullname" Placeholder="Enter your full name" IconName="IconName.Person" />
+            <ValidationMessage For="@(() => signUpInfo.Fullname)" />
+
+            <TextInputBase BindValue="signUpInfo.Email" Label="Email" Placeholder="Enter your email" IconName="IconName.Envelope" />
+            <ValidationMessage For="@(() => signUpInfo.Email)" />
+
+            <TextInputBase BindValue="signUpInfo.PhoneNumber" Label="Phone Number" Placeholder="Enter your phone number" IconName="IconName.Phone" />
+            <ValidationMessage For="@(() => signUpInfo.PhoneNumber)" />
+
+            <TextInputBase Type="password" BindValue="signUpInfo.Password" Label="Password" Placeholder="Enter password" IconName="IconName.Lock" />
+            <ValidationMessage For="@(() => signUpInfo.Password)" />
+
+            <TextInputBase Type="password" BindValue="signUpInfo.ConfirmPassword" Label="Confirm Password" Placeholder="Confirm password" IconName="IconName.Lock" />
+            <ValidationMessage For="@(() => signUpInfo.ConfirmPassword)" />
+
+            <ValidationSummary />
+
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="rememberMe" />
+                <label class="form-check-label" for="rememberMe">Remember me</label>
+            </div>
+        </EditForm>
+    </BodyTemplate>
+
+    <FooterTemplate>
+        <span class="text-muted dark float-start">
+            Already have an account?
+            <Button Class="ButtonColor.Primary" @onclick="() => OnLoginClicked.InvokeAsync()">Login</Button>
+        </span>
+        <span class="text-muted float-end dark">Forgot password? <a href="#">Reset</a></span>
+        <br />
+        <Button Color="ButtonColor.Secondary" @onclick="HandleCancel">Cancel</Button>
+        <Button Color="ButtonColor.Primary" ButtonType="ButtonType.Submit">Sign Up</Button>
+    </FooterTemplate>
+</Modal>
+
+@code {
+    private Modal modal = default!;
+
+    [Parameter] public EventCallback OnLoginClicked { get; set; }
+
+    public async Task ShowAsync() => await modal.ShowAsync();
+    public async Task HideAsync() => await modal.HideAsync();
+
+    private SignUpInfo signUpInfo = new();
+
+    public class SignUpInfo
+    {
+        [Required(ErrorMessage = "Fullname is required")]
+        public string Fullname { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Email is required")]
+        [EmailAddress(ErrorMessage = "Invalid email format")]
+        public string Email { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Phone number is required")]
+        public string PhoneNumber { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Password is required")]
+        [MinLength(6, ErrorMessage = "Password must be at least 6 characters")]
+        public string Password { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Please confirm your password")]
+        [Compare(nameof(Password), ErrorMessage = "Passwords do not match")]
+        public string ConfirmPassword { get; set; } = string.Empty;
+    }
+
+    private void HandleSignUp()
+    {
+        Console.WriteLine($"Signed up: {signUpInfo.Fullname} | Email: {signUpInfo.Email}");
+        HideAsync();
+    }
+
+    private void HandleCancel()
+    {
+        HideAsync();
+    }
+}
