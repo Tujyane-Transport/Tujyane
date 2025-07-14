@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Tujyane")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ac7cd1222099c27e31f2f3c4e1de9c08c33be5c7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7f0910e5f32e38d32552a5d30a22c8d16dcda31a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Tujyane")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Tujyane")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
