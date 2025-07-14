@@ -7,10 +7,30 @@
             <DataAnnotationsValidator />
             <h5 class="text-center mb-3">Welcome Back!</h5>
 
-            <TextInputBase BindValue="loginInfo.Username" Label="Username" Placeholder="Enter Username" IconName="IconName.Person" />
+            <div class="input-group my-3">
+                <span class="input-group-text"><Icon Name="IconName.Person" /></span>
+                <div class="form-floating">
+                    <input id="usernameInput"
+                           class="form-control"
+                           type="text"
+                           placeholder="Enter your Username"
+                            @bind="loginInfo.Username" />
+                    <label for="usernameInput">Username</label>
+                </div>
+            </div>
             <ValidationMessage For="@(() => loginInfo.Username)" />
 
-            <TextInputBase Type="password" BindValue="loginInfo.Password" Label="Password" Placeholder="Enter Password" IconName="IconName.Lock" />
+            <div class="input-group my-3">
+                <span class="input-group-text"><Icon Name="IconName.Lock" /></span>
+                <div class="form-floating">
+                    <input id="passwordInput"
+                           class="form-control"
+                           type="password"
+                           placeholder="Enter your Password"
+                            @bind="loginInfo.Password" />
+                    <label for="passwordInput">Password</label>
+                </div>
+            </div>
             <ValidationMessage For="@(() => loginInfo.Password)" />
 
             <div class="form-check mb-3">
