@@ -1,4 +1,11 @@
 /home/rwema/Documents/GitHub/Projects/Tujyane/docs/build/web.config
+/home/rwema/Documents/GitHub/Projects/Tujyane/docs/docs/web.config
 /home/rwema/Documents/GitHub/Projects/Tujyane/docs/build/wwwroot/sample-data/weather.json
 /home/rwema/Documents/GitHub/Projects/Tujyane/docs/build/wwwroot/_framework/blazor.boot.json
+/home/rwema/Documents/GitHub/Projects/Tujyane/docs/docs/build/wwwroot/sample-data/weather.json
+/home/rwema/Documents/GitHub/Projects/Tujyane/docs/docs/build/wwwroot/_framework/blazor.boot.json
+/home/rwema/Documents/GitHub/Projects/Tujyane/docs/docs/sample-data/weather.json
+/home/rwema/Documents/GitHub/Projects/Tujyane/docs/docs/wwwroot/sample-data/weather.json
+/home/rwema/Documents/GitHub/Projects/Tujyane/docs/docs/wwwroot/_framework/blazor.boot.json
+/home/rwema/Documents/GitHub/Projects/Tujyane/docs/docs/_framework/blazor.boot.json
 /home/rwema/Documents/GitHub/Projects/Tujyane/docs/web.config
