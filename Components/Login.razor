@@ -17,20 +17,18 @@
                 <input class="form-check-input" type="checkbox" id="rememberMe" />
                 <label class="form-check-label" for="rememberMe">Remember me</label>
             </div>
-
-            <ValidationSummary />
+            <Button Color="ButtonColor.Secondary" @onclick="HandleCancel">Cancel</Button>
+            <button type="submit" class="btn btn-primary">Login</button>
         </EditForm>
     </BodyTemplate>
 
     <FooterTemplate>
         <span class="text-muted dark float-start">
             Don't have an account?
-            <Button Class="ButtonColor.Primary" @onclick="() => OnSignUpClicked.InvokeAsync()">Sign up</Button>
+            <Button Color="ButtonColor.Primary" @onclick="() => OnSignUpClicked.InvokeAsync()">Sign up</Button>
         </span>
         <span class="text-muted float-end dark">Forgot password? <a href="#">Reset</a></span>
         <br />
-        <Button Color="ButtonColor.Secondary" @onclick="HandleCancel">Cancel</Button>
-        <Button Color="ButtonColor.Primary" ButtonType="ButtonType.Submit">Login</Button>
     </FooterTemplate>
 </Modal>
 

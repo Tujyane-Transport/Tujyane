@@ -20,25 +20,22 @@
 
             <TextInputBase Type="password" BindValue="signUpInfo.ConfirmPassword" Label="Confirm Password" Placeholder="Confirm password" IconName="IconName.Lock" />
             <ValidationMessage For="@(() => signUpInfo.ConfirmPassword)" />
-
-            <ValidationSummary />
-
             <div class="form-check mb-3">
                 <input class="form-check-input" type="checkbox" id="rememberMe" />
                 <label class="form-check-label" for="rememberMe">Remember me</label>
             </div>
+            <Button Color="ButtonColor.Secondary" @onclick="HandleCancel">Cancel</Button>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
         </EditForm>
     </BodyTemplate>
 
     <FooterTemplate>
         <span class="text-muted dark float-start">
             Already have an account?
-            <Button Class="ButtonColor.Primary" @onclick="() => OnLoginClicked.InvokeAsync()">Login</Button>
+            <Button Color="ButtonColor.Primary" @onclick="() => OnLoginClicked.InvokeAsync()">Login</Button>
         </span>
         <span class="text-muted float-end dark">Forgot password? <a href="#">Reset</a></span>
         <br />
-        <Button Color="ButtonColor.Secondary" @onclick="HandleCancel">Cancel</Button>
-        <Button Color="ButtonColor.Primary" ButtonType="ButtonType.Submit">Sign Up</Button>
     </FooterTemplate>
 </Modal>
 
