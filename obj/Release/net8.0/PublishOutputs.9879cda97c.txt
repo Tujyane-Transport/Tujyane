@@ -1,11 +1,8 @@
 /home/rwema/Documents/GitHub/Projects/Tujyane/build/build/web.config
-/home/rwema/Documents/GitHub/Projects/Tujyane/build/docs/web.config
+/home/rwema/Documents/GitHub/Projects/Tujyane/build/build/build/build/wwwroot/sample-data/weather.json
+/home/rwema/Documents/GitHub/Projects/Tujyane/build/build/build/build/wwwroot/_framework/blazor.boot.json
+/home/rwema/Documents/GitHub/Projects/Tujyane/build/build/build/wwwroot/sample-data/weather.json
+/home/rwema/Documents/GitHub/Projects/Tujyane/build/build/build/wwwroot/_framework/blazor.boot.json
 /home/rwema/Documents/GitHub/Projects/Tujyane/build/build/wwwroot/sample-data/weather.json
 /home/rwema/Documents/GitHub/Projects/Tujyane/build/build/wwwroot/_framework/blazor.boot.json
-/home/rwema/Documents/GitHub/Projects/Tujyane/build/docs/build/wwwroot/sample-data/weather.json
-/home/rwema/Documents/GitHub/Projects/Tujyane/build/docs/build/wwwroot/_framework/blazor.boot.json
-/home/rwema/Documents/GitHub/Projects/Tujyane/build/docs/sample-data/weather.json
-/home/rwema/Documents/GitHub/Projects/Tujyane/build/docs/wwwroot/sample-data/weather.json
-/home/rwema/Documents/GitHub/Projects/Tujyane/build/docs/wwwroot/_framework/blazor.boot.json
-/home/rwema/Documents/GitHub/Projects/Tujyane/build/docs/_framework/blazor.boot.json
 /home/rwema/Documents/GitHub/Projects/Tujyane/build/web.config

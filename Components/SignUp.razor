@@ -1,25 +1,66 @@
 @namespace Tujyane.Components
-@using System.ComponentModel.DataAnnotations;
+@using System.ComponentModel.DataAnnotations
 
 <Modal @ref="modal" Title="Sign Up">
     <BodyTemplate>
         <EditForm Model="signUpInfo" OnValidSubmit="HandleSignUp">
             <DataAnnotationsValidator />
 
-            <TextInputBase BindValue="signUpInfo.Fullname" Label="Fullname" Placeholder="Enter your full name" IconName="IconName.Person" />
+            <InputStyle Label="Fullname" IconName="IconName.Person" InputId="fullnameInput">
+                <Input>
+                    <input id="fullnameInput"
+                           class="form-control"
+                           type="text"
+                           placeholder="Enter your full name"
+                           @bind="signUpInfo.Fullname" />
+                </Input>
+            </InputStyle>
             <ValidationMessage For="@(() => signUpInfo.Fullname)" />
 
-            <TextInputBase BindValue="signUpInfo.Email" Label="Email" Placeholder="Enter your email" IconName="IconName.Envelope" />
+            <InputStyle Label="Email" IconName="IconName.Envelope" InputId="emailInput">
+                <Input>
+                    <input id="emailInput"
+                           class="form-control"
+                           type="email"
+                           placeholder="Enter your email"
+                           @bind="signUpInfo.Email" />
+                </Input>
+            </InputStyle>
             <ValidationMessage For="@(() => signUpInfo.Email)" />
 
-            <TextInputBase BindValue="signUpInfo.PhoneNumber" Label="Phone Number" Placeholder="Enter your phone number" IconName="IconName.Phone" />
+            <InputStyle Label="Phone Number" IconName="IconName.Phone" InputId="phoneInput">
+                <Input>
+                    <input id="phoneInput"
+                           class="form-control"
+                           type="tel"
+                           placeholder="Enter your phone number"
+                           @bind="signUpInfo.PhoneNumber" />
+                </Input>
+            </InputStyle>
             <ValidationMessage For="@(() => signUpInfo.PhoneNumber)" />
 
-            <TextInputBase Type="password" BindValue="signUpInfo.Password" Label="Password" Placeholder="Enter password" IconName="IconName.Lock" />
+            <InputStyle Label="Password" IconName="IconName.Lock" InputId="passwordInput">
+                <Input>
+                    <input id="passwordInput"
+                           class="form-control"
+                           type="password"
+                           placeholder="Enter password"
+                           @bind="signUpInfo.Password" />
+                </Input>
+            </InputStyle>
             <ValidationMessage For="@(() => signUpInfo.Password)" />
 
-            <TextInputBase Type="password" BindValue="signUpInfo.ConfirmPassword" Label="Confirm Password" Placeholder="Confirm password" IconName="IconName.Lock" />
+            <InputStyle Label="Confirm Password" IconName="IconName.Lock" InputId="confirmPasswordInput">
+                <Input>
+                    <input id="confirmPasswordInput"
+                           class="form-control"
+                           type="password"
+                           placeholder="Confirm password"
+                           @bind="signUpInfo.ConfirmPassword" />
+                </Input>
+            </InputStyle>
             <ValidationMessage For="@(() => signUpInfo.ConfirmPassword)" />
+
             <div class="form-check mb-3">
                 <input class="form-check-input" type="checkbox" id="rememberMe" />
                 <label class="form-check-label" for="rememberMe">Remember me</label>

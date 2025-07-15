@@ -1,0 +1,25 @@
+<div class="input-group my-3">
+    <span class="input-group-text"><Icon Name="@IconName" /></span>
+    <div class="form-floating">
+        @Input
+        <label for="@InputId">@Label</label>
+    </div>
+</div>
+
+@code
+{
+    [Parameter]
+    public required string Label { get; set; } = string.Empty;
+
+    [Parameter]
+    public required IconName IconName { get; set; }
+    [Parameter]
+    public RenderFragment? Input { get; set; }
+    [Parameter]
+    public required string InputId { get; set; } = String.Empty;
+
+    protected override void OnParametersSet()
+    {
+        // Placeholder logic can be added here if needed
+    }
+}

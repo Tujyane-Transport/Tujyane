@@ -42,11 +42,11 @@
     },
     {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.Tujyane.Microsoft.AspNetCore.StaticWebAssets.props",
-      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+      "PackagePath": "build/Microsoft.AspNetCore.StaticWebAssets.props"
     },
     {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.Tujyane.props",
-      "PackagePath": "build\\Tujyane.props"
+      "PackagePath": "build/Tujyane.props"
     },
     {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.Tujyane.props",
