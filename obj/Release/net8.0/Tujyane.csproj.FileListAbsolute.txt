@@ -1041,3 +1041,5 @@
 /home/rwema/Documents/GitHub/Projects/Tujyane/bin/Release/net8.0/build/build/wwwroot/_framework/blazor.boot.json
 /home/rwema/Documents/GitHub/Projects/Tujyane/bin/Release/net8.0/build/build/build/wwwroot/sample-data/weather.json
 /home/rwema/Documents/GitHub/Projects/Tujyane/bin/Release/net8.0/build/build/build/wwwroot/_framework/blazor.boot.json
+/home/rwema/Documents/GitHub/Projects/Tujyane/bin/Release/net8.0/build/build/build/build/wwwroot/sample-data/weather.json
+/home/rwema/Documents/GitHub/Projects/Tujyane/bin/Release/net8.0/build/build/build/build/wwwroot/_framework/blazor.boot.json

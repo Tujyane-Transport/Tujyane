@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Tujyane",
   "resources": {
-    "hash": "sha256-mdLO6UsADwGXiLMG9MNGZ1JcpSLKhOHrWrAHLGcXmtg=",
+    "hash": "sha256-32PuWN96kIK/XB5jTJ2YG2y66bVsSPYLtSbLX/3Zuqk=",
     "jsModuleNative": {
       "dotnet.native.8.0.17.izkrj49jad.js": "sha256-YyxJV6dv935qHoQAmjB+2qRjHeGpm4SyWxE0T/KvsIE="
     },
@@ -209,10 +209,10 @@
       "mscorlib.wasm": "sha256-flmBXVpp8uDpWBNEJuRkqo3Qnir1KADo5a1rCQISkPs=",
       "netstandard.wasm": "sha256-iuCVrIBmiGbXpNVvYkBmSt16BNEjbbD82vYrtHimftc=",
       "System.Private.CoreLib.wasm": "sha256-1Xa/xaUoA/iRxpDqZPUUzL8QaTawkoJLhGmxtRv9ZJI=",
-      "Tujyane.wasm": "sha256-hvbeZUAwb1RepaQz52S+R/7CuleoluusTHVxVBpxAX4="
+      "Tujyane.wasm": "sha256-7Jp0lP66EJzjmMB8t8tVFCkyC4id44tG11ZoHTm3gDk="
     },
     "pdb": {
-      "Tujyane.pdb": "sha256-BkPeuUpiVDrLNE18Vw8+Nr5Uu1D4OKOkbcplbniDF+0="
+      "Tujyane.pdb": "sha256-Tu11FEPWGXvtBF7KZdXZrY2qmaDIh1x9itBfq0ljC7A="
     }
   },
   "cacheBootResources": true,

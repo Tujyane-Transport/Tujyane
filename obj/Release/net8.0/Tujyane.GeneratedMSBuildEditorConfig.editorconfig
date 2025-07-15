@@ -30,6 +30,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9CdXNSb3V0ZUZvcm0ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/rwema/Documents/GitHub/Projects/Tujyane/Components/InputStyle.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9JbnB1dFN0eWxlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/rwema/Documents/GitHub/Projects/Tujyane/Components/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9Mb2dpbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
