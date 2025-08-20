@@ -1,5 +1,6 @@
 using Microsoft.JSInterop;
 using System.Threading.Tasks;
+using Tujyane.Models;
 
 namespace Tujyane.Services
 {
@@ -7,21 +8,54 @@ namespace Tujyane.Services
     {
         private readonly IJSRuntime _jsRuntime;
 
-        // Constructor injection
+        public AppwriteUser? CurrentUser { get; private set; }
+
+        public event Action? OnChange; // let components subscribe
+
         public AuthService(IJSRuntime jsRuntime)
         {
             _jsRuntime = jsRuntime;
         }
 
-        public async Task Login(string email, string password)
+        private void NotifyStateChanged() => OnChange?.Invoke();
+
+        public async Task Initialize()
         {
-            // Call the JavaScript loginUser function
-            await _jsRuntime.InvokeVoidAsync("loginUser", email, password);
+            CurrentUser = await GetCurrentUser();
+            NotifyStateChanged();
         }
+
+        public async Task<AppwriteUser?> GetCurrentUser()
+        {
+            try
+            {
+                var user = await _jsRuntime.InvokeAsync<AppwriteUser>("getCurrentUser");
+                CurrentUser = user;
+                return user;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
         public async Task Register(string email, string password, string name)
         {
-            // Call the JavaScript registerUser function
             await _jsRuntime.InvokeVoidAsync("registerUser", email, password, name);
+            await Initialize(); // refresh CurrentUser
+        }
+
+        public async Task Login(string email, string password)
+        {
+            await _jsRuntime.InvokeVoidAsync("loginUser", email, password);
+            await Initialize(); // refresh CurrentUser
+        }
+
+        public async Task Logout()
+        {
+            await _jsRuntime.InvokeVoidAsync("logoutUser");
+            CurrentUser = null;
+            NotifyStateChanged();
         }
     }
 }

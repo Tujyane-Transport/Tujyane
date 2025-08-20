@@ -1,4 +1,7 @@
 @using Tujyane.Components
+@using Tujyane.Services
+@using Tujyane.Models
+@inject AuthService AuthService
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top rounded-2 m-1" style="height: 3.5rem;">
   <div class="container-fluid">
@@ -18,7 +21,14 @@
 
       <div class="nav-item d-flex align-items-center ms-auto border rounded-5 px-1" @onclick="ShowLoginModal" style="cursor: pointer;">
         <Icon Name="IconName.PersonCircle" class="m-1 text-light" style="font-size: 1.5rem;" />
-        <span class="text-light mx-1">Sign in</span>
+        @if(AuthService.CurrentUser != null)
+        {
+            <span class="text-light mx-1">@AuthService.CurrentUser.Name</span>
+        }
+        else
+        {
+            <span class="text-light mx-1">Sign in</span>
+        }
       </div>
     </div>
   </div>
