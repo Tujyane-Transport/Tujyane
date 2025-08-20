@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Ho4O4FsFe/qgj7+b3/DA4BQn7rW7UOr6lP97VL3ti9k=",
+  "Hash": "vMHlRWMJv+fhuBS6+n0Jnt00rtpLkETI2rSvc6EfsMk=",
   "Source": "Tujyane",
   "BasePath": "/",
   "Mode": "Root",
@@ -8128,6 +8128,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/index.html"
+    },
+    {
+      "Identity": "/home/rwema/Documents/GitHub/Projects/Tujyane/wwwroot/js/appwriteInterop.js",
+      "SourceId": "Tujyane",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/rwema/Documents/GitHub/Projects/Tujyane/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "js/appwriteInterop.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/appwriteInterop.js"
     },
     {
       "Identity": "/home/rwema/Documents/GitHub/Projects/Tujyane/wwwroot/sample-data/weather.json",

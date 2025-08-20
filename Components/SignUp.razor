@@ -1,5 +1,7 @@
 @namespace Tujyane.Components
 @using System.ComponentModel.DataAnnotations
+@using Tujyane.Services
+@inject AuthService AuthService;
 
 <Modal @ref="modal" Title="Sign Up">
     <BodyTemplate>
@@ -111,9 +113,9 @@
         public string ConfirmPassword { get; set; } = string.Empty;
     }
 
-    private void HandleSignUp()
+    public async Task HandleSignUp()
     {
-        Console.WriteLine($"Signed up: {signUpInfo.Fullname} | Email: {signUpInfo.Email}");
+        await AuthService.Register(signUpInfo.Email, signUpInfo.Password, signUpInfo.Fullname);
         HideAsync();
     }
 

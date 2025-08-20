@@ -37,6 +37,10 @@
       "PackagePath": "staticwebassets/index.html"
     },
     {
+      "Id": "/home/rwema/Documents/GitHub/Projects/Tujyane/wwwroot/js/appwriteInterop.js",
+      "PackagePath": "staticwebassets/js/appwriteInterop.js"
+    },
+    {
       "Id": "/home/rwema/Documents/GitHub/Projects/Tujyane/wwwroot/sample-data/weather.json",
       "PackagePath": "staticwebassets/sample-data/weather.json"
     },
