@@ -31,6 +31,7 @@ namespace Tujyane.Services
             {
                 var user = await _jsRuntime.InvokeAsync<AppwriteUser>("getCurrentUser");
                 CurrentUser = user;
+                NotifyStateChanged();
                 return user;
             }
             catch
@@ -47,6 +48,14 @@ namespace Tujyane.Services
 
         public async Task Login(string email, string password)
         {
+            var currentUser = await _jsRuntime.InvokeAsync<AppwriteUser>("getCurrentUser");
+            if (currentUser != null)
+            {
+                Console.WriteLine("Already logged in, skipping new session.");
+                CurrentUser = currentUser;
+                await Initialize();
+                return;
+            }
             await _jsRuntime.InvokeVoidAsync("loginUser", email, password);
             await Initialize(); // refresh CurrentUser
         }

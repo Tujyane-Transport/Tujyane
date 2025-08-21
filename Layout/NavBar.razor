@@ -42,10 +42,22 @@
     private Login? loginModal;
     private SignUp? signUpModal;
 
+    protected override void OnInitialized()
+    {
+        // Subscribe to AuthService state change
+        AuthService.OnChange += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        // Prevent memory leaks
+        AuthService.OnChange -= StateHasChanged;
+    }
+
     private async Task ShowLoginModal()
     {
         if (signUpModal != null)
-            await signUpModal.HideAsync(); // avoid overlap
+            await signUpModal.HideAsync();
 
         if (loginModal != null)
             await loginModal.ShowAsync();
