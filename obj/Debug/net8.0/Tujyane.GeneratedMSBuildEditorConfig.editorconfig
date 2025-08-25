@@ -54,6 +54,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9UZXh0SW5wdXRCYXNlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/rwema/Documents/GitHub/Projects/Tujyane/Components/UserProfile.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9Vc2VyUHJvZmlsZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/rwema/Documents/GitHub/Projects/Tujyane/Layout/NavBar.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0L05hdkJhci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 

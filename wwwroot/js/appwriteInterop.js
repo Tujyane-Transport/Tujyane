@@ -30,3 +30,15 @@ window.getCurrentUser = async function () {
     }
     return await account.get();
 };
+
+window.logoutUser = async function () {
+    if (!account) {
+        throw new Error("Appwrite not initialized. Call initAppwrite first.");
+    }
+    try {
+        await account.deleteSession("current");
+        console.log("User logged out");
+    } catch (err) {
+        console.error("Logout failed:", err);
+    }
+};

@@ -1,0 +1,41 @@
+@namespace Tujyane.Components
+@using System.ComponentModel.DataAnnotations;
+@using Tujyane.Services;
+@inject AuthService AuthService;
+
+<Modal @ref="modal" Title="Your Account">
+    <BodyTemplate>
+        <Icon Name="IconName.PersonCircle" class="m-auto" Size="IconSize.x1"/>
+        @if (AuthService.CurrentUser != null)
+        {
+            <p><strong>ID:</strong> @AuthService.CurrentUser.Id</p>
+            <p><strong>Name:</strong> @AuthService.CurrentUser.Name</p>
+            <p><strong>Email:</strong> @AuthService.CurrentUser.Email</p>
+        }
+        else
+        {
+            <p class="text-muted">You are not signed in.</p>
+        }
+    </BodyTemplate>
+    <FooterTemplate>
+        <Button Color="ButtonColor.Secondary" @onclick="HandleCancel">Cancel</Button>
+        @if (AuthService.CurrentUser != null)
+        {
+            <Button Color="ButtonColor.Primary" @onclick="HandleLogout">Logout</Button>
+        }
+    </FooterTemplate>
+</Modal>
+
+@code
+{
+    private Modal modal = default!;
+    public async Task ShowAsync() => await modal.ShowAsync();
+    public async Task HideAsync() => await modal.HideAsync();
+    private async Task HandleCancel() => await HideAsync();
+    private async Task HandleLogout()
+    {
+        await AuthService.Logout();
+        await HideAsync();
+    }
+
+}

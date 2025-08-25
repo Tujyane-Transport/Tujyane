@@ -21,7 +21,14 @@ namespace Tujyane.Services
 
         public async Task Initialize()
         {
-            CurrentUser = await GetCurrentUser();
+            try
+            {
+                CurrentUser = await _jsRuntime.InvokeAsync<AppwriteUser>("getCurrentUser");
+            }
+            catch
+            {
+                CurrentUser = null; // means no session yet
+            }
             NotifyStateChanged();
         }
 
@@ -48,17 +55,22 @@ namespace Tujyane.Services
 
         public async Task Login(string email, string password)
         {
-            var currentUser = await _jsRuntime.InvokeAsync<AppwriteUser>("getCurrentUser");
-            if (currentUser != null)
+            try
             {
-                Console.WriteLine("Already logged in, skipping new session.");
-                CurrentUser = currentUser;
-                await Initialize();
-                return;
+                // First, try to login
+                await _jsRuntime.InvokeVoidAsync("loginUser", email, password);
+
+                // Then fetch the user
+                CurrentUser = await _jsRuntime.InvokeAsync<AppwriteUser>("getCurrentUser");
+                NotifyStateChanged();
             }
-            await _jsRuntime.InvokeVoidAsync("loginUser", email, password);
-            await Initialize(); // refresh CurrentUser
+            catch (JSException ex)
+            {
+                Console.WriteLine($"Login failed: {ex.Message}");
+                throw; // rethrow so UI can show error
+            }
         }
+
 
         public async Task Logout()
         {

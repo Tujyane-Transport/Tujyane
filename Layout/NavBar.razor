@@ -19,11 +19,11 @@
         </li>
       </ul>
 
-      <div class="nav-item d-flex align-items-center ms-auto border rounded-5 px-1" @onclick="ShowLoginModal" style="cursor: pointer;">
+      <div class="nav-item d-flex align-items-center ms-auto border rounded-5 px-1" @onclick="OnUserClick" style="cursor: pointer;">
         <Icon Name="IconName.PersonCircle" class="m-1 text-light" style="font-size: 1.5rem;" />
         @if(AuthService.CurrentUser != null)
         {
-            <span class="text-light mx-1">@AuthService.CurrentUser.Name</span>
+            <span class="text-light mx-1">@AuthService.CurrentUser.FirstName</span>
         }
         else
         {
@@ -37,10 +37,12 @@
 <!-- Modals -->
 <Login @ref="loginModal" OnSignUpClicked="ShowSignUpModal" />
 <SignUp @ref="signUpModal" OnLoginClicked="ShowLoginModal" />
+<UserProfile @ref="userProfileModal" />
 
 @code {
     private Login? loginModal;
     private SignUp? signUpModal;
+    private UserProfile? userProfileModal;
 
     protected override void OnInitialized()
     {
@@ -53,7 +55,18 @@
         // Prevent memory leaks
         AuthService.OnChange -= StateHasChanged;
     }
-
+    private async Task OnUserClick()
+    {
+        if (AuthService.CurrentUser == null)
+        {
+            await ShowLoginModal();
+        }
+        else
+        {
+            if (userProfileModal != null)
+                await userProfileModal.ShowAsync();
+        }
+    }
     private async Task ShowLoginModal()
     {
         if (signUpModal != null)
